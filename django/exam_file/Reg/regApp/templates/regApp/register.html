@@ -1,0 +1,33 @@
+<table  style="width:100%">
+	<tr>
+		<th>
+			FirstName
+		</th>
+		<th>
+			LastName
+		</th>
+		<th>
+			Image
+		</th>
+
+	{% for reg in registrations%}
+	<tr>
+		<td>
+			{{reg.FirstName}}
+		</td>
+		<td>
+			{{reg.LastName}}
+		</td>
+		<td>
+			{{reg.Image}}
+		</td>
+
+		<td>
+			<button type="submit" onclick="location.href='{% url 'edit' reg.id %}'" >Edit</button>
+		</td>
+		<td>
+			<button type="submit" onclick="location.href='{% url 'delete' reg.id %}'" name='del'>Delete</button> 
+		</td>
+	</tr>
+	{% endfor %}
+</table><br><br>
